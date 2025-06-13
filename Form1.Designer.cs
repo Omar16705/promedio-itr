@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblerror = new System.Windows.Forms.Label();
             this.txtN3 = new System.Windows.Forms.TextBox();
             this.txtN2 = new System.Windows.Forms.TextBox();
             this.txtN1 = new System.Windows.Forms.TextBox();
@@ -39,19 +41,17 @@
             this.lblNota2 = new System.Windows.Forms.Label();
             this.lblNoat1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtPromObtenido = new System.Windows.Forms.TextBox();
+            this.lblPromedioObtenido = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.lblPromedioObtenido = new System.Windows.Forms.Label();
-            this.txtPromObtenido = new System.Windows.Forms.TextBox();
-            this.lblerror = new System.Windows.Forms.Label();
             this.btnNRegistro = new System.Windows.Forms.Button();
             this.btnAgregarPromedio = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tlpAyuda = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,10 +67,30 @@
             this.groupBox1.Controls.Add(this.lblNoat1);
             this.groupBox1.Location = new System.Drawing.Point(25, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(449, 361);
+            this.groupBox1.Size = new System.Drawing.Size(580, 361);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de Notas";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::proyecto.Properties.Resources.icons8_usuario_masculino_en_círculo_100;
+            this.pictureBox1.Location = new System.Drawing.Point(459, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 127);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblerror
+            // 
+            this.lblerror.AutoSize = true;
+            this.lblerror.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerror.ForeColor = System.Drawing.Color.Red;
+            this.lblerror.Location = new System.Drawing.Point(23, 198);
+            this.lblerror.Name = "lblerror";
+            this.lblerror.Size = new System.Drawing.Size(59, 26);
+            this.lblerror.TabIndex = 7;
+            this.lblerror.Text = "Error";
             // 
             // txtN3
             // 
@@ -79,6 +99,7 @@
             this.txtN3.Size = new System.Drawing.Size(174, 20);
             this.txtN3.TabIndex = 6;
             this.tlpAyuda.SetToolTip(this.txtN3, "Ingresa valores en 0 y 10\r\n");
+            this.txtN3.TextChanged += new System.EventHandler(this.txtN3_TextChanged);
             // 
             // txtN2
             // 
@@ -87,6 +108,7 @@
             this.txtN2.Size = new System.Drawing.Size(173, 20);
             this.txtN2.TabIndex = 5;
             this.tlpAyuda.SetToolTip(this.txtN2, "Ingresa valores en 0 y 10\r\n");
+            this.txtN2.TextChanged += new System.EventHandler(this.txtN2_TextChanged);
             // 
             // txtN1
             // 
@@ -95,6 +117,7 @@
             this.txtN1.Size = new System.Drawing.Size(175, 20);
             this.txtN1.TabIndex = 4;
             this.tlpAyuda.SetToolTip(this.txtN1, "Ingresa valores en 0 y 10");
+            this.txtN1.TextChanged += new System.EventHandler(this.txtN1_TextChanged);
             // 
             // label4
             // 
@@ -142,12 +165,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Promedio";
             // 
+            // txtPromObtenido
+            // 
+            this.txtPromObtenido.Location = new System.Drawing.Point(134, 62);
+            this.txtPromObtenido.Multiline = true;
+            this.txtPromObtenido.Name = "txtPromObtenido";
+            this.txtPromObtenido.ReadOnly = true;
+            this.txtPromObtenido.Size = new System.Drawing.Size(169, 54);
+            this.txtPromObtenido.TabIndex = 1;
+            // 
+            // lblPromedioObtenido
+            // 
+            this.lblPromedioObtenido.AutoSize = true;
+            this.lblPromedioObtenido.Location = new System.Drawing.Point(31, 62);
+            this.lblPromedioObtenido.Name = "lblPromedioObtenido";
+            this.lblPromedioObtenido.Size = new System.Drawing.Size(97, 13);
+            this.lblPromedioObtenido.TabIndex = 0;
+            this.lblPromedioObtenido.Text = "Promedio Obtenido";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Controls.Add(this.btnNRegistro);
             this.groupBox3.Controls.Add(this.btnAgregarPromedio);
-            this.groupBox3.Location = new System.Drawing.Point(513, 21);
+            this.groupBox3.Location = new System.Drawing.Point(611, 21);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(313, 317);
             this.groupBox3.TabIndex = 2;
@@ -165,34 +206,7 @@
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // lblPromedioObtenido
-            // 
-            this.lblPromedioObtenido.AutoSize = true;
-            this.lblPromedioObtenido.Location = new System.Drawing.Point(31, 62);
-            this.lblPromedioObtenido.Name = "lblPromedioObtenido";
-            this.lblPromedioObtenido.Size = new System.Drawing.Size(97, 13);
-            this.lblPromedioObtenido.TabIndex = 0;
-            this.lblPromedioObtenido.Text = "Promedio Obtenido";
-            // 
-            // txtPromObtenido
-            // 
-            this.txtPromObtenido.Location = new System.Drawing.Point(134, 62);
-            this.txtPromObtenido.Multiline = true;
-            this.txtPromObtenido.Name = "txtPromObtenido";
-            this.txtPromObtenido.Size = new System.Drawing.Size(169, 54);
-            this.txtPromObtenido.TabIndex = 1;
-            // 
-            // lblerror
-            // 
-            this.lblerror.AutoSize = true;
-            this.lblerror.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblerror.ForeColor = System.Drawing.Color.Red;
-            this.lblerror.Location = new System.Drawing.Point(23, 198);
-            this.lblerror.Name = "lblerror";
-            this.lblerror.Size = new System.Drawing.Size(59, 26);
-            this.lblerror.TabIndex = 7;
-            this.lblerror.Text = "Error";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnNRegistro
             // 
@@ -216,15 +230,7 @@
             this.btnAgregarPromedio.TabIndex = 0;
             this.btnAgregarPromedio.Text = "Agregar Promedio";
             this.btnAgregarPromedio.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::proyecto.Properties.Resources.icons8_usuario_masculino_en_círculo_100;
-            this.pictureBox1.Location = new System.Drawing.Point(343, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 101);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.btnAgregarPromedio.Click += new System.EventHandler(this.btnAgregarPromedio_Click);
             // 
             // tlpAyuda
             // 
@@ -242,13 +248,13 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Sistema de notas ITR";
+            this.Text = "Sistema de Promedio ITR";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

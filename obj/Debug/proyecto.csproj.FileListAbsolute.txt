@@ -8,3 +8,13 @@ C:\Users\Estudiante\Desktop\proyecto\obj\Debug\proyecto.csproj.GenerateResource.
 C:\Users\Estudiante\Desktop\proyecto\obj\Debug\proyecto.csproj.CoreCompileInputs.cache
 C:\Users\Estudiante\Desktop\proyecto\obj\Debug\proyecto.exe
 C:\Users\Estudiante\Desktop\proyecto\obj\Debug\proyecto.pdb
+C:\Users\Estudiante\Desktop\promedio-itr\bin\Debug\proyecto.exe.config
+C:\Users\Estudiante\Desktop\promedio-itr\bin\Debug\proyecto.exe
+C:\Users\Estudiante\Desktop\promedio-itr\bin\Debug\proyecto.pdb
+C:\Users\Estudiante\Desktop\promedio-itr\obj\Debug\proyecto.csproj.AssemblyReference.cache
+C:\Users\Estudiante\Desktop\promedio-itr\obj\Debug\proyecto.Form1.resources
+C:\Users\Estudiante\Desktop\promedio-itr\obj\Debug\proyecto.Properties.Resources.resources
+C:\Users\Estudiante\Desktop\promedio-itr\obj\Debug\proyecto.csproj.GenerateResource.cache
+C:\Users\Estudiante\Desktop\promedio-itr\obj\Debug\proyecto.csproj.CoreCompileInputs.cache
+C:\Users\Estudiante\Desktop\promedio-itr\obj\Debug\proyecto.exe
+C:\Users\Estudiante\Desktop\promedio-itr\obj\Debug\proyecto.pdb
